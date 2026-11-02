@@ -29,6 +29,8 @@ yomiyasu は「元にない情報を足さない」「意味の幅を変えな�
    python3 ~/.claude/skills/kotoba-keisatsu/scripts/keisatsu_lint.py 対象ファイル
    ```
 
+   Windows では `python3` が Microsoft Store の案内になっているので、この手順の `python3` はすべて `python` に置き換える。
+
    lint は手がかりにとどめる。候補が0件でも、全文を一文ずつ読む。
 3. 見出し・表の見出し・本文・箇条書きのすべての文を、1 の読み手として読む。checklist の型（K1〜K7 とそれ以降に追加された型）に当たる箇所を、行番号・原文・型・何が分からないかで一覧にする。
 
@@ -45,7 +47,7 @@ yomiyasu は「元にない情報を足さない」「意味の幅を変えな�
 
 ## 4. yomiyasu で仕上げる
 
-直した文書に yomiyasu の検査をかける。yomiyasu のスクリプトの場所は `ls -d ~/.claude/plugins/cache/yomiyasu/yomiyasu/*/skills/yomiyasu` のいちばん新しい版。
+直した文書に yomiyasu の検査をかける。yomiyasu のスクリプトの場所は `ls -d ~/.claude/plugins/cache/yomiyasu/yomiyasu/*/skills/yomiyasu` のいちばん新しい版。プラグインで入れていない PC（Windows）では `~/.claude/skills/yomiyasu`（`~/Desktop/programs/yomiyasu/skills/yomiyasu` へのジャンクション。更新はそのフォルダで `git pull`）。
 
 ```bash
 python3 <yomiyasuのフォルダ>/scripts/yomiyasu_check.py run --source 原文 --final 直した文書 --fact-gaps
